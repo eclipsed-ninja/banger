@@ -45,7 +45,7 @@ def discover_hosts():
     @param targetip: IP address of machine whose MAC address is to be looked up
     """
     scanner = nmap.PortScanner()
-    scanner.scan(hosts="192.168.9.1/24", arguments="-T4 -F")
+    scanner.scan(hosts=gatewayIp+"/24", arguments="-T4 -F")
     discover = scanner.all_hosts()
     # Pop out yourself so you don't get fucked
     try:
